@@ -1,0 +1,4 @@
+# Treat exploration notebooks as documentation so they do not dominate GitHub's
+# language statistics. The actual application code is Python: src/ and tests/.
+# See: https://github.com/github-linguist/linguist#overrides
+*.ipynb linguist-documentation
