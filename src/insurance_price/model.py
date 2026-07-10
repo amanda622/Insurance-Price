@@ -29,7 +29,15 @@ class ModelService:
         self._pipeline = joblib.load(model_path)
 
     def predict(self, request: PredictionRequest) -> PredictionResponse:
-        """Predict the insurance charge for a single request."""
+        """Predict the insurance charge for a single request.
+
+        An insurance charge can never be negative, but the underlying linear
+        model is not constrained to non-negative outputs and can predict
+        below zero for some plausible inputs (see
+        experiments/results/negative_predictions.json). Clamp at this single
+        output boundary so every caller gets a valid charge.
+        """
         row = pd.DataFrame([request.model_dump(mode="json")], columns=FEATURE_COLUMNS)
         charge = float(self._pipeline.predict(row)[0])
+        charge = max(charge, 0.0)
         return PredictionResponse(predicted_charge=round(charge, 2))

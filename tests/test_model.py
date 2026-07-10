@@ -30,3 +30,18 @@ def test_smoker_costs_more_than_non_smoker():
 def test_missing_model_raises():
     with pytest.raises(ModelNotFoundError):
         ModelService(Path("/nonexistent/model.joblib"))
+
+
+def test_predict_never_returns_negative_charge():
+    """Regression case from experiments/results/negative_predictions.json.
+
+    This exact input is inside the dataset's observed numeric range and is
+    a plausible real-world quote, yet the unguarded model predicted
+    approximately -3414.52.
+    """
+    service = ModelService(get_settings().model_path)
+    request = PredictionRequest(
+        age=18, sex="male", bmi=53.13, children=0, smoker="no", region="southeast"
+    )
+    response = service.predict(request)
+    assert response.predicted_charge >= 0
