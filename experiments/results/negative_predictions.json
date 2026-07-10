@@ -1,0 +1,534 @@
+{
+  "experiment": {
+    "name": "negative_prediction_investigation",
+    "model_id": "current_production_pipeline",
+    "matches_comparison_candidate": "B4",
+    "pipeline_description": "insurance_price.features.build_pipeline(degree=2)",
+    "dataset_row_count": 1338,
+    "training_row_count": 936,
+    "test_size": 0.3,
+    "random_state": 101,
+    "round_decimals": 6,
+    "sklearn_version": "1.9.0",
+    "numpy_version": "2.5.1"
+  },
+  "observed_ranges": {
+    "age": {
+      "min": 18,
+      "max": 64
+    },
+    "bmi": {
+      "min": 15.96,
+      "max": 53.13
+    },
+    "children": {
+      "min": 0,
+      "max": 5
+    }
+  },
+  "legal_ranges": {
+    "age": {
+      "min": 0,
+      "max": 120
+    },
+    "bmi": {
+      "min": 0.0,
+      "max": 100.0,
+      "bounds": "exclusive"
+    },
+    "children": {
+      "min": 0,
+      "max": 20
+    },
+    "categorical_values": {
+      "sex": [
+        "male",
+        "female"
+      ],
+      "smoker": [
+        "yes",
+        "no"
+      ],
+      "region": [
+        "northeast",
+        "northwest",
+        "southeast",
+        "southwest"
+      ]
+    }
+  },
+  "observed_range_investigation": {
+    "grid_definition": {
+      "age_points": [
+        18,
+        25,
+        31,
+        38,
+        44,
+        51,
+        57,
+        64
+      ],
+      "bmi_points": [
+        15.96,
+        21.27,
+        26.58,
+        31.89,
+        37.2,
+        42.51,
+        47.82,
+        53.13
+      ],
+      "children_points": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "categorical_combinations": 16
+    },
+    "total_points": 6144,
+    "negative_count": 28,
+    "negative_rate": 0.004557,
+    "minimum_prediction": -3414.520339,
+    "negative_numeric_bounds": {
+      "age": {
+        "min": 18,
+        "max": 31
+      },
+      "bmi": {
+        "min": 47.82,
+        "max": 53.13
+      },
+      "children": {
+        "min": 0,
+        "max": 5
+      }
+    },
+    "most_negative_examples": [
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -3414.520339
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -3183.677508
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 1,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -2622.495856
+      },
+      {
+        "age": 25,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -2323.712969
+      },
+      {
+        "age": 25,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -2225.17941
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 1,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -2151.579013
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 2,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1909.058362
+      },
+      {
+        "age": 25,
+        "bmi": 53.13,
+        "children": 1,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1482.780914
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 3,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1274.207857
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 2,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1198.067507
+      },
+      {
+        "age": 25,
+        "bmi": 53.13,
+        "children": 1,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1144.173343
+      },
+      {
+        "age": 18,
+        "bmi": 47.82,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1095.917067
+      },
+      {
+        "age": 31,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1037.264429
+      },
+      {
+        "age": 31,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -1022.390041
+      },
+      {
+        "age": 18,
+        "bmi": 47.82,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -984.782105
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southwest",
+        "prediction": -731.329367
+      },
+      {
+        "age": 25,
+        "bmi": 53.13,
+        "children": 2,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -720.435848
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 4,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -717.94434
+      },
+      {
+        "age": 18,
+        "bmi": 47.82,
+        "children": 1,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -378.557545
+      },
+      {
+        "age": 18,
+        "bmi": 53.13,
+        "children": 3,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -323.142989
+      }
+    ]
+  },
+  "legal_range_investigation": {
+    "grid_definition": {
+      "age_points": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        100,
+        110,
+        120
+      ],
+      "bmi_points": [
+        1.0,
+        10.8,
+        20.6,
+        30.4,
+        40.2,
+        50.0,
+        59.8,
+        69.6,
+        79.4,
+        89.2,
+        99.0
+      ],
+      "children_points": [
+        0,
+        4,
+        8,
+        12,
+        16,
+        20
+      ],
+      "categorical_combinations": 16
+    },
+    "total_points": 13728,
+    "negative_count": 1967,
+    "negative_rate": 0.143284,
+    "minimum_prediction": -46794.951389,
+    "negative_numeric_bounds": {
+      "age": {
+        "min": 0,
+        "max": 100
+      },
+      "bmi": {
+        "min": 1.0,
+        "max": 99.0
+      },
+      "children": {
+        "min": 0,
+        "max": 20
+      }
+    },
+    "most_negative_examples": [
+      {
+        "age": 0,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -46794.951389
+      },
+      {
+        "age": 10,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -46626.971794
+      },
+      {
+        "age": 20,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -45519.645577
+      },
+      {
+        "age": 30,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -43472.972739
+      },
+      {
+        "age": 0,
+        "bmi": 99.0,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -41793.537676
+      },
+      {
+        "age": 10,
+        "bmi": 99.0,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -41249.201371
+      },
+      {
+        "age": 40,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -40486.95328
+      },
+      {
+        "age": 10,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "female",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -40224.058941
+      },
+      {
+        "age": 0,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "female",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -40203.025291
+      },
+      {
+        "age": 0,
+        "bmi": 99.0,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -40188.384384
+      },
+      {
+        "age": 10,
+        "bmi": 99.0,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -39833.061324
+      },
+      {
+        "age": 20,
+        "bmi": 99.0,
+        "children": 0,
+        "sex": "male",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -39765.518444
+      },
+      {
+        "age": 10,
+        "bmi": 1.0,
+        "children": 16,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -39642.298931
+      },
+      {
+        "age": 0,
+        "bmi": 1.0,
+        "children": 16,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -39530.806684
+      },
+      {
+        "age": 20,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "female",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -39305.74597
+      },
+      {
+        "age": 0,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southeast",
+        "prediction": -39259.541092
+      },
+      {
+        "age": 10,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southeast",
+        "prediction": -38846.559956
+      },
+      {
+        "age": 20,
+        "bmi": 1.0,
+        "children": 16,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southwest",
+        "prediction": -38814.444556
+      },
+      {
+        "age": 20,
+        "bmi": 99.0,
+        "children": 0,
+        "sex": "female",
+        "smoker": "no",
+        "region": "southeast",
+        "prediction": -38538.391643
+      },
+      {
+        "age": 20,
+        "bmi": 1.0,
+        "children": 20,
+        "sex": "male",
+        "smoker": "yes",
+        "region": "southeast",
+        "prediction": -37494.232199
+      }
+    ]
+  }
+}
